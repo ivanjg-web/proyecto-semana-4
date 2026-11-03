@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "API de Estudiantes",
-    "description": "Documentación automática generada para el bootcamp",
+    "title": "API Rincón del Sabor",
+    "description": "API para consultar el menú de productos del restaurante",
     "version": "1.0.0"
   },
   "host": "localhost:3000",
@@ -20,6 +20,50 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/menu": {
+      "get": {
+        "tags": [
+          "Menu"
+        ],
+        "summary": "Consultar todos los productos del menú",
+        "description": "Obtiene la lista completa de productos registrados en la base de datos.",
+        "responses": {
+          "200": {
+            "description": "Lista de productos obtenida correctamente",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Bandeja Paisa"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Descripción del producto"
+                  },
+                  "unit_price": {
+                    "type": "string",
+                    "example": "14.99"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
+          "500": {
+            "description": "Error interno del servidor"
           }
         }
       }
