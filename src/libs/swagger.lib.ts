@@ -2,8 +2,8 @@ import swaggerAutogen from 'swagger-autogen';
 
 const doc = {
     info: {
-        title: 'API de Estudiantes',
-        description: 'Documentación automática generada para el bootcamp',
+        title: 'API Rincón del Sabor',
+        description: 'API para consultar el menú de productos del restaurante',
         version: '1.0.0',
     },
     host: 'localhost:3000',
