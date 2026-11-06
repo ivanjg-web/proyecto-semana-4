@@ -38,3 +38,12 @@ export async function updateProduct(id: number, name: string, description: strin
 
     return result.rows[0];
 }
+
+export async function searchProducts(name: string) {
+    const result = await pool.query(
+        "SELECT * FROM product WHERE name ILIKE $1",
+        [`%${name}%`]
+    );
+
+    return result.rows;
+}
