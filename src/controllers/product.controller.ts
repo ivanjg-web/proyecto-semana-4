@@ -83,13 +83,13 @@ export async function updateProduct(req: Request, res: Response) {
         const { id } = req.params;
         const productId = Number(id);
 
-        const { name, description, unit_price } = req.body;
+        const { name, description, price } = req.body;
 
         const product = await updateProductModel(
             productId,
             name,
             description,
-            unit_price
+            price
         );
 
         if (!product) {
