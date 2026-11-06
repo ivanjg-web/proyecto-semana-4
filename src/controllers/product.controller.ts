@@ -59,9 +59,9 @@ export async function createProduct(req: Request, res: Response) {
   #swagger.summary = 'Crear un producto' */
 
     try {
-        const { name, description, unit_price } = req.body;
+        const { name, description, price } = req.body;
 
-        const product = await insertProduct(name, description, unit_price);
+        const product = await insertProduct(name, description, price);
 
         res.status(201).json(product);
 
